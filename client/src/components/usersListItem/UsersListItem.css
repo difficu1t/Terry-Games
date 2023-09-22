@@ -1,0 +1,26 @@
+.usersListItemContainer {
+    display: flex;
+    width: 500px;
+    border: 1px solid black;
+    justify-content: space-between;
+    align-items: center;
+    background-color: lightgray;
+}
+
+.userListItemInfo {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+}
+
+.usersListItemContainer h5 {
+    margin: 0px;
+}
+
+.usersListItemContainer h4 {
+    margin: 0px;
+}
+
+.numOfWins {
+    padding: 5px;
+}

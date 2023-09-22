@@ -1,0 +1,16 @@
+.sort-container {
+    display: flex;
+    justify-content: center;
+}
+
+.sort-item {
+    display: flex;
+    justify-content: left;
+    width: 80%;
+    margin: 20px 50px;
+}
+
+.sorter {
+    margin: 0px 0px 0px 20px;
+    width: 150px;
+}

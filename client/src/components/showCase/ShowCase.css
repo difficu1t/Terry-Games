@@ -1,0 +1,15 @@
+.showCaseContainer {
+    display: flex;
+    align-items: center;
+}
+
+.showCaseListContainer {
+    display: flex;
+    background-color: black;
+}
+
+.showCaseContainer .myButton {
+    margin: 5px;
+    height: 50px;
+}
+

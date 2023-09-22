@@ -1,0 +1,21 @@
+.image-container {
+    max-width: 460px;
+    max-height: 368px;
+    border-radius: 16px;
+    border: 1px solid black;
+    overflow: hidden;
+    margin: 0px 10px;
+}
+
+.image-item {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+@media (max-width: 1254px) {
+    .image-container {
+        max-width: 60%;
+        max-height: 595px;
+    }
+}

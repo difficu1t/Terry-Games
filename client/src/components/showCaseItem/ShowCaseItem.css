@@ -1,0 +1,7 @@
+.showGame {
+    width: 250px;
+    height: 230px;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black; 
+    margin: 1px;
+}

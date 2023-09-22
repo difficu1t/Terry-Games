@@ -1,0 +1,21 @@
+.nav-bar {
+    display: flex;
+    background-color: orange;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+.nav-bar-items {
+    margin-right: 30px;
+    text-decoration: none;
+    font-weight: 700;
+    font-family: 'Arial';
+}
+
+.nav-bar-items:visited {
+    color: black;
+}
+
+.nav-bar .mini-image-item{
+    width: 19px;
+}

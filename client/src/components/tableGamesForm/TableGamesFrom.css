@@ -1,0 +1,83 @@
+.tableGamesContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.tableGamesForm {
+    display: flex;
+    justify-content: center;
+    width: 500px;
+    border-radius: 16px;
+    background-color: lightgray;
+    padding: 10px;
+    margin: 20px;
+}
+
+.explanationTo {
+    display: inline-block;
+    margin: 10px 10px 10px 0px;
+}
+
+form textarea {
+    display: block;
+    width: 100%;
+    max-width: 450px;
+    height: 260px;
+    resize: none;
+}
+
+.extraInfo {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.extraContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 50px 10px 0px;
+}
+
+.extraContainer p {
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.fieldHeader {
+    margin: 10px 0px;
+}
+
+.titleGameField {
+    width: 100%;
+    max-width: 450px;
+    border: 1px solid black;
+    border-radius: 3px;
+    margin-bottom: 10px;    
+    font-size: 14px;
+}
+
+.playersHeader {
+    display: inline-block;
+    margin: 10px 10px 10px 0px;
+}
+
+.numberField {
+    width: 50px;
+    border: 1px solid black;
+    border-radius: 3px;
+}
+
+.selectField {
+    border: 1px solid black;
+    border-radius: 3px;
+}
+
+textArea {
+    margin: 10px 10px 10px 0px;
+}
+
+.submitButton {
+    font-size: 14px;
+    margin: 10px 10px 10px 0px;
+}
+
