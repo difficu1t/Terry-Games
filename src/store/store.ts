@@ -1,12 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit';
 import boardGamesReducer from '@/store/slices/boardGamesSlice'
 import usersReducer from '@/store/slices/usersSlice'
+import currentUser from '@/store/slices/currentUserSlice'
 
 export const store = configureStore({
   devTools: true,
   reducer: {
     boardGames: boardGamesReducer,
-    users: usersReducer
+    users: usersReducer,
+    currentUser: currentUser
   }
 })
 

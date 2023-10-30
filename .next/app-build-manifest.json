@@ -1,10 +1,9 @@
 {
   "pages": {
-    "/(main)/layout": [
+    "/(main)/template": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/(main)/layout.css",
-      "static/chunks/app/(main)/layout.js"
+      "static/chunks/app/(main)/template.js"
     ],
     "/(main)/browse/page": [
       "static/chunks/webpack.js",
@@ -16,26 +15,22 @@
       "static/chunks/main-app.js",
       "static/chunks/app/(main)/browse/loading.js"
     ],
+    "/(main)/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/(main)/layout.css",
+      "static/chunks/app/(main)/layout.js"
+    ],
     "/(main)/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/(main)/page.js"
     ],
-    "/(auth)/layout": [
+    "/(main)/boardgame/[game]/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/(auth)/layout.css",
-      "static/chunks/app/(auth)/layout.js"
-    ],
-    "/(auth)/join/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(auth)/join/page.js"
-    ],
-    "/(auth)/signin/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(auth)/signin/page.js"
+      "static/css/app/(main)/boardgame/[game]/page.css",
+      "static/chunks/app/(main)/boardgame/[game]/page.js"
     ]
   }
 }

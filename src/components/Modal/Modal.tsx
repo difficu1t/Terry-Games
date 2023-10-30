@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react'
 const Modal = ({children, isHidden, setIsHidden}: 
   {children: React.ReactNode, isHidden: boolean, setIsHidden: React.Dispatch<React.SetStateAction<boolean>>}) => {
 
-  const [ display, setDisplay ] = useState('hidden')
+  const [ display, setDisplay ] = useState('hidden');
 
   useEffect(() => {
     if(isHidden){

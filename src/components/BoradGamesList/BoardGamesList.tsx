@@ -2,85 +2,50 @@
 import React, { useState, useEffect, useMemo } from 'react'
 import BoardGamesItem from '../BoardGamesItem/BoardGamesItem'
 import { IBoardGame } from '@/common/types/boardGame'
+import { SortFields } from '@/common/types/sortFields'
+import * as sortingMethods from '@/utils/sortingMethods'
 
 const BoardGamesList = ({ sortedList, setSortedList, boardGamesList }: { 
   sortedList: IBoardGame[],
   setSortedList: React.Dispatch<React.SetStateAction<IBoardGame[]>>,
   boardGamesList: IBoardGame[]}) => {
 
-  const [ isTitleSorted, setIsTitleSorted ] = useState(false);
-  const [ isPlayersSorted, setIsPlayersSorted ] = useState(false);
-  const [ isPlayedTimesSorted, setIsPlayedTimesSorted ] = useState(false);
-  const [ isRatingSorted, setIsRatingSorted ] = useState(false);
+  const [ isSorted, setIsSorted ] = useState<SortFields>({
+    isTitleSorted: false,
+    isPlayersSorted: false,
+    isPlayedTimesSorted: false,
+    isRatingSorted: false
+  });
   const [ category, setCategory ] = useState('#');
+  const { orderSort, titleSort, playersSort, playedTimesSort, ratingSort } = sortingMethods;
 
   useEffect(() => {
     setSortedList(boardGamesList)
   }, [category])
 
-  function orderSort (e: React.MouseEvent<HTMLAnchorElement>) {
+  function orderSorting (e: React.MouseEvent<HTMLAnchorElement>) {
     e.preventDefault();
-    if(category === '#'){
-      const reverseArray = sortedList.slice();
-      setSortedList(reverseArray.reverse());
-    }
-    setCategory('#');
+    orderSort(category, setCategory, sortedList, setSortedList);
   }
 
-  async function titleSort (e: React.MouseEvent<HTMLAnchorElement>) {
+  function titleSorting (e: React.MouseEvent<HTMLAnchorElement>) {
     e.preventDefault();
-    if(category === 'title'){
-      const sortedArray = sortedList.slice();
-      sortedArray.sort((a, b) => a.title.localeCompare(b.title));
-      if(isTitleSorted){
-        sortedArray.reverse();
-      }
-      setIsTitleSorted(!isTitleSorted);
-      setSortedList(sortedArray);
-    }
-    setCategory('title');
+    titleSort(category, setCategory, sortedList, setSortedList, isSorted, setIsSorted);
   }
 
-  function playersSort (e: React.MouseEvent<HTMLAnchorElement>) {
+  function playersSorting (e: React.MouseEvent<HTMLAnchorElement>) {
     e.preventDefault();
-    if(category === 'players'){
-      const sortedArray = sortedList.slice();
-      sortedArray.sort((a, b) => a.minPlayers - b.minPlayers);
-      if(isPlayersSorted){
-        sortedArray.reverse();
-      }
-      setIsPlayersSorted(!isPlayersSorted);
-      setSortedList(sortedArray);
-    }
-    setCategory('players');
+    playersSort(category, setCategory, sortedList, setSortedList, isSorted, setIsSorted);
   }
 
-  function playedTimesSort (e: React.MouseEvent<HTMLAnchorElement>) {
+  function playedTimesSorting (e: React.MouseEvent<HTMLAnchorElement>) {
     e.preventDefault();
-    if(category === 'playedTimes'){
-      const sortedArray = sortedList.slice();
-      sortedArray.sort((a, b) => a.playedTimes - b.playedTimes);
-      if(isPlayedTimesSorted){
-        sortedArray.reverse();
-      }
-      setIsPlayedTimesSorted(!isPlayedTimesSorted);
-      setSortedList(sortedArray);
-    }
-    setCategory('playedTimes');
+    playedTimesSort(category, setCategory, sortedList, setSortedList, isSorted, setIsSorted);
   }
 
-  function ratingSort (e: React.MouseEvent<HTMLAnchorElement>) {
+  function ratingSorting (e: React.MouseEvent<HTMLAnchorElement>) {
     e.preventDefault();
-    if(category === 'rating'){
-      const sortedArray = sortedList.slice();
-      sortedArray.sort((a, b) => a.rating - b.rating);
-      if(isRatingSorted){
-        sortedArray.reverse();
-      }
-      setIsRatingSorted(!isRatingSorted);
-      setSortedList(sortedArray);
-    }
-    setCategory('rating');
+    ratingSort(category, setCategory, sortedList, setSortedList, isSorted, setIsSorted);
   }
 
   return (
@@ -88,12 +53,12 @@ const BoardGamesList = ({ sortedList, setSortedList, boardGamesList }: {
     <table className="w-9/12">
       <tbody>
         <tr className="text-sm">
-          <th className="w-24"><a href="/browse" className="text-blue-600" onClick={orderSort}>#</a></th>
+          <th className="w-24"><a href="/browse" className="text-blue-600" onClick={orderSorting}>#</a></th>
           <th className="w-24"></th>
-          <th><a href="/browse" className="text-blue-600" onClick={titleSort}>Title</a></th>
-          <th className="w-24"><a href="/browse" className="text-blue-600" onClick={playersSort}>Players</a></th>
-          <th className="w-24"><a href="/browse" className="text-blue-600" onClick={playedTimesSort}>Played Times</a></th>
-          <th className="w-24"><a href="/browse" className="text-blue-600" onClick={ratingSort}>Avg Rating</a></th> 
+          <th><a href="/browse" className="text-blue-600" onClick={titleSorting}>Title</a></th>
+          <th className="w-24"><a href="/browse" className="text-blue-600" onClick={playersSorting}>Players</a></th>
+          <th className="w-24"><a href="/browse" className="text-blue-600" onClick={playedTimesSorting}>Played Times</a></th>
+          <th className="w-24"><a href="/browse" className="text-blue-600" onClick={ratingSorting}>Avg Rating</a></th> 
         </tr>
         {sortedList.map((item, index) => {
           return <BoardGamesItem key={index} item={item} index={index}></BoardGamesItem>

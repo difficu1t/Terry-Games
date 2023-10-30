@@ -18,7 +18,6 @@ const LogInForm = ({setIsHidden}: {setIsHidden: React.Dispatch<React.SetStateAct
       .catch((error) => {
         console.log(error)
       })
-    setIsHidden(true);
     setEmail('');
     setPassword('');
   }

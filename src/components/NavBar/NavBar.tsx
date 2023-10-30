@@ -15,7 +15,7 @@ const NavBar: React.FC = () => {
     setIsHidden(!isHidden);
   }
 
-  return (
+  return ( 
     <header>
       <Modal isHidden={isHidden} setIsHidden={setIsHidden}>
         <LogInForm setIsHidden={setIsHidden}/>
