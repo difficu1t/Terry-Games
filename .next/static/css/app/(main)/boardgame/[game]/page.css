@@ -1,0 +1,37 @@
+/*!***************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[3]!./src/app/(main)/boardgame/[game]/style.css ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************/
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 3px;
+  width: 52px;
+  height: 52px;
+  font-weight: bold;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.hb {
+  background-image: url(/_next/static/media/iconmonstr-hexagon-1-240.33f0cfd0.png);
+}
+
+.ratingIcon {
+  width: 16px;
+  height: 16px;
+  font-weight: bold;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.sbactive {
+  cursor: pointer;
+  background-image: url(/_next/static/media/iconmonstr-star-3-240-yellow.16813282.png)
+}
+
+.sbnonactive {
+  background-image: url(/_next/static/media/iconmonstr-star-3-240-void.5cdc94f3.png)
+}
