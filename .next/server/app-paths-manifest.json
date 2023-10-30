@@ -1,1 +1,6 @@
-{}
+{
+  "/(main)/page": "app/(main)/page.js",
+  "/(main)/browse/page": "app/(main)/browse/page.js",
+  "/(auth)/signin/page": "app/(auth)/signin/page.js",
+  "/(auth)/join/page": "app/(auth)/join/page.js"
+}
